@@ -1,4 +1,7 @@
 const express = require('express')
+const mongoose = require('mongoose')
+
+const docs = require('./routes/api/docs')
 
 const app = express()
 
@@ -14,8 +17,8 @@ mongoose
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err))
 
-// // use routes
-// app.use('', require(''))
+// use routes
+app.use('/api/docs', docs)
 
 const PORT = process.env.PORT || 5000
 
