@@ -5,6 +5,15 @@ const app = express()
 // use body-parser middleware
 app.use(express.json())
 
+// MongoDB config
+const db = require('./config/keys').mongoURI
+
+// connect to db
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB connected...'))
+  .catch(err => console.log(err))
+
 // // use routes
 // app.use('', require(''))
 
