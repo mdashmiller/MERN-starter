@@ -1,0 +1,23 @@
+{
+  "name": "mern-starter",
+  "version": "1.0.0",
+  "description": "boilerplate code for MERN app with Redux and SCSS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Miller",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
+    "mocha": "^6.1.3",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0",
+    "supertest": "^4.0.2"
+  }
+}

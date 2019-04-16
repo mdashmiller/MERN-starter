@@ -1,0 +1,6 @@
+# dependencies
+/node_modules
+
+# # uncomment me if you store any ENV variables in your .env file
+# # config
+# .env
