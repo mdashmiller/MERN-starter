@@ -17,6 +17,11 @@ describe('App rendering', () => {
     component = setUp()
   })
 
+  it('renders 1 Provider component', () => {
+    const wrapper = findByTestAttr(component, 'provider')
+    expect(wrapper.length).toBe(1)
+  })
+
   it('renders 1 app div', () => {
     const wrapper = findByTestAttr(component, 'app')
     expect(wrapper.length).toBe(1)
