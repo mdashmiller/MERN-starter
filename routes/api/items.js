@@ -1,41 +1,41 @@
 const express = require('express')
 const router = express.Router()
 
-// Doc model
-const Doc = require('../../models/Doc')
+// Item model
+const Item = require('../../models/Item')
 
-// @route   GET api/docs
-// @desc    get all docs
+// @route   GET api/items
+// @desc    get all items
 // @access  public
 router.get('/', (req, res) => {
-  Doc
+  Item
     .find()
     .sort({ date: -1 })
-    .then(docs => res.json(docs))
+    .then(items => res.json(items))
     .catch(err => res.json(err))
 })
 
-// @route   POST api/docs
-// @desc    create a doc
+// @route   POST api/items
+// @desc    create an item
 // @access  public
 router.post('/', (req, res) => {
-  const newDoc = new Doc({
-    prop1: req.body.prop
+  const newItem = new Item({
+    name: req.body.name
   })
 
-  newDoc
+  newItem
     .save()
-    .then(doc => res.json(doc))
+    .then(item => res.json(item))
     .catch(err => res.json(err))
 })
 
-// @route   DELETE api/docs/:id
-// @desc    remove a doc
+// @route   DELETE api/items/:id
+// @desc    remove an item
 // @access  public
 router.delete('/:id', (req, res) => {
-  Doc
+  Item
     .findById(req.params.id)
-    .then(doc => doc.remove().then(() => res.json({ success: true })))
+    .then(item => item.remove().then(() => res.json({ success: true })))
     .catch(err => res.status(404).json({ success: false }))
 })
 

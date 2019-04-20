@@ -17,13 +17,18 @@ describe('App rendering', () => {
     component = setUp()
   })
 
-  it('renders 1 Provider component', () => {
+  it('should render 1 Provider component', () => {
     const wrapper = findByTestAttr(component, 'provider')
     expect(wrapper.length).toBe(1)
   })
 
-  it('renders 1 app div', () => {
+  it('should render 1 app div', () => {
     const wrapper = findByTestAttr(component, 'app')
+    expect(wrapper.length).toBe(1)
+  })
+
+  it('should render 1 items-list component', () => {
+    const wrapper = findByTestAttr(component, 'items-list')
     expect(wrapper.length).toBe(1)
   })
 

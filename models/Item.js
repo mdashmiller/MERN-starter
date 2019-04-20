@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 // create Schema
-const DocSchema = new Schema({
-  prop1: {
+const ItemSchema = new Schema({
+  name: {
     type: String,
     required: true
   },
@@ -13,4 +13,4 @@ const DocSchema = new Schema({
   }
 })
 
-module.exports = Doc = mongoose.model('doc', DocSchema)
+module.exports = Item = mongoose.model('item', ItemSchema)
