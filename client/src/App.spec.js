@@ -2,19 +2,24 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-import { shallow } from 'enzyme'
+import { Provider } from 'react-redux'
+import store from '../src/store'
+
+import { mount } from 'enzyme'
 import { findByTestAttr } from './Utils'
 
-// create shallow component for testing
+const mockStore = store()
+
+// mount component for testing
 const setUp = (props = {}) => {
-  return shallow(<App {...props} />)
+  return mount(<App {...props} />)
 }
 
 describe('App rendering', () => {
 
   let component
   beforeAll(() => {
-    component = setUp()
+    component = setUp(mockStore)
   })
 
   it('should render 1 Provider component', () => {

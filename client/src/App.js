@@ -8,7 +8,7 @@ import store from './store'
 class App extends Component {
   render() {
     return (
-      <Provider data-test="provider" store={store}>
+      <Provider data-test="provider" store={store()}>
         <div data-test="app">
           <ItemsList data-test="items-list" />
         </div>
