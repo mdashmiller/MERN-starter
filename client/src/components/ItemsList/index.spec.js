@@ -6,9 +6,13 @@ import { Provider } from 'react-redux'
 import store from '../../store'
 
 import { mount } from 'enzyme'
-// import { findByTestAttr } from '../../Utils'
+import { findByTestAttr, checkProps } from '../../Utils'
 
 const state = {}
+const expectedProps = {
+  getItems: () => {},
+  item: {testKey: 'test value'}
+}
 
 describe('ItemsList rendering', () => {
 
@@ -22,4 +26,14 @@ describe('ItemsList rendering', () => {
     expect(component.find(ItemsList).length).toBe(1)
   })
   
+})
+
+describe('checking PropTypes', () => {
+
+  it('should not throw a warning', () => {
+    const propsErr = checkProps(ItemsList, expectedProps)
+
+    expect(propsErr).toBeUndefined()
+  })
+
 })
