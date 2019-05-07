@@ -2,29 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-import { Provider } from 'react-redux'
-import store from '../src/store'
-
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import { findByTestAttr } from './Utils'
 
-const mockStore = store()
-
-// mount component for testing
+// render component for testing
 const setUp = (props = {}) => {
-  return mount(<App {...props} />)
+  return shallow(<App {...props} />)
 }
 
 describe('App rendering', () => {
 
   let component
   beforeAll(() => {
-    component = setUp(mockStore)
-  })
-
-  it('should render 1 Provider component', () => {
-    const wrapper = findByTestAttr(component, 'provider')
-    expect(wrapper.length).toBe(1)
+    component = setUp()
   })
 
   it('should render 1 app div', () => {

@@ -7,16 +7,33 @@ import { getItems } from '../../store/actions/itemActions'
 
 class ItemsList extends Component {
 
-  componentDidMount() {
-    this.props.getItems()
+  // componentDidMount() {
+  //   this.props.getItems()
+  // }
+
+  state = {
+    items: [
+      {
+        id: '1',
+        name: 'item 1'
+      },
+      {
+        id: '2',
+        name: 'item 2'
+      },
+      {
+        id: '3',
+        name: 'item 3'
+      }
+    ]
   }
 
   render() {
-    const { items } = this.props.item
+    const { items } = this.state
 
     return (
       <div>
-        <ul>
+        <ul data-test="list">
           {items.map(item => 
             <li key={item.id}>{item.name}</li>
           )}
@@ -26,20 +43,21 @@ class ItemsList extends Component {
   }
 }
 
-ItemsList.propTypes = {
-  getItems: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
-  // item: PropTypes.shape({
-  //   id: PropTypes.string.isRequired,
-  //   name: PropTypes.string.isRequired,
-  //   date: PropTypes.string.isRequired
-  // }).isRequired
-}
+// ItemsList.propTypes = {
+//   getItems: PropTypes.func.isRequired,
+//   item: PropTypes.object.isRequired
+//   // item: PropTypes.shape({
+//   //   id: PropTypes.string.isRequired,
+//   //   name: PropTypes.string.isRequired,
+//   //   date: PropTypes.string.isRequired
+//   // }).isRequired
+// }
 
-const mapStateToProps = state => {
-  return {
-    item: state.item
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     item: state.item
+//   }
+// }
 
-export default connect(mapStateToProps, { getItems })(ItemsList)
+// export default connect(mapStateToProps, { getItems })(ItemsList)
+export default ItemsList
