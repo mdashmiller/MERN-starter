@@ -1,4 +1,4 @@
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from './constants'
+import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from './types'
 
 export const getItems = () => /*dispatch =>*/ {
   // return fetch('/api/docs')
