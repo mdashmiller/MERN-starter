@@ -2,18 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { Provider } from 'react-redux'
-import { store } from './store'
+import { shallow } from 'enzyme'
+import { findByTestAttr, testStore } from './Utils'
 
-import { mount } from 'enzyme'
-import { findByTestAttr } from './Utils'
+const initialState = {
+  items: []
+}
 
 // render component for testing
-const setUp = (props = {}) => {
-  return mount(
-    <Provider store={store}>
-      <App {...props} />
-    </Provider>
-  )
+const setUp = (initialState = {}) => {
+  const store = testStore(initialState)
+  return shallow(<App store={store} /> )
 }
 
 describe('App rendering', () => {
@@ -28,9 +27,9 @@ describe('App rendering', () => {
     expect(wrapper.length).toBe(1)
   })
 
-  it('should render a Connect(items-list) component and an items-list component', () => {
+  it('should render 1 items-list component', () => {
     const wrapper = findByTestAttr(component, 'items-list')
-    expect(wrapper.length).toBe(2)
+    expect(wrapper.length).toBe(1)
   })
 
 })
@@ -40,10 +39,11 @@ describe('App mounting and unmounting', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
-      <Provider store={store}>
+      <Provider store={testStore(initialState)}>
         <App />
       </Provider>
-      , div)
+      , div
+    )
     ReactDOM.unmountComponentAtNode(div)
   })
 

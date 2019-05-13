@@ -4,11 +4,6 @@ import ItemsList from './index'
 import { shallow } from 'enzyme'
 import { findByTestAttr, testStore, checkProps } from '../../Utils'
 
-const setUp = (initialState={}) => {
-  const store = testStore(initialState)
-  return shallow(<ItemsList store={store} />).childAt(0).dive()
-}
-
 const initialState = {
   items: [
     {
@@ -30,6 +25,11 @@ const initialState = {
       body: 'test text 3'
     }
   ]
+}
+
+const setUp = (initialState={}) => {
+  const store = testStore(initialState)
+  return shallow(<ItemsList store={store} />).childAt(0).dive()
 }
 
 describe('ItemsList component', () => {

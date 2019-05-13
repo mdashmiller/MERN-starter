@@ -1,4 +1,4 @@
-import { getItems } from '../store/actions/itemActions'
+import { getItems } from '../store/actions/item'
 import moxios from 'moxios'
 import { testStore } from '../Utils'
 

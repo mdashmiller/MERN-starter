@@ -3,7 +3,7 @@ import './styles.scss'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { getItems } from '../../store/actions/itemActions'
+import { getItems } from '../../store/actions/item'
 
 class ItemsList extends Component {
 
