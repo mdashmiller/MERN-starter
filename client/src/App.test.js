@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { Provider } from 'react-redux'
 import { shallow } from 'enzyme'
-import { findByTestAttr, testStore } from './Utils'
+import { findByTestAttr, testStore } from '../Utils'
 
 const initialState = {
   items: []

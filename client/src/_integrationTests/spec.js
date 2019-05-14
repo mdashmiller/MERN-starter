@@ -1,6 +1,6 @@
 import { getItems } from '../store/actions/item'
 import moxios from 'moxios'
-import { testStore } from '../Utils'
+import { testStore } from '../../Utils'
 
 describe('getItems action', () => {
 

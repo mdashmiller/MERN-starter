@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ItemsList from './index'
 import { shallow } from 'enzyme'
-import { findByTestAttr, testStore, checkProps } from '../../Utils'
+import { findByTestAttr, testStore, checkProps } from '../../../Utils'
 
 const initialState = {
   items: [
