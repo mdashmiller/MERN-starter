@@ -21,6 +21,7 @@ npm run server
 npm run client
 
 # Server runs on http://localhost:5000 and client on http://localhost:3000
+# If you store any variables in the .env file be sure to uncomment it in .gitignore
 ```
 
 ## Author
