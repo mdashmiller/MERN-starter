@@ -21,7 +21,14 @@ npm run server
 npm run client
 
 # Server runs on http://localhost:5000 and client on http://localhost:3000
+
 # If you store any variables in the .env file be sure to uncomment it in .gitignore
+
+# The 'run server' script relies on nodemon which must be installed if it is not on your machine
+npm i nodemon -g
+
+# If you don't want to use nodemon then change the 'server' script in package.json to the following
+'node server.js'
 ```
 
 ## Author
